@@ -14,5 +14,8 @@ def lowerCase(cipherText):
 
 # 
 def messageCompareFrequenct(cipherText):
-    
-    return
+    frequency = [0] * 26
+    length = len(cipherText)
+    for i in cipherText:
+        frequency[ord(i) - ord('a')] += 1
+    return 
