@@ -45,3 +45,6 @@ def decrypt(message, key):
         counter += 1
     
     return ''.join(decrypted_message)
+
+def no_key(message):
+    keyList = []

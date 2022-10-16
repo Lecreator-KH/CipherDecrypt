@@ -1,5 +1,7 @@
+import imp
 import string
 import Vignere_Cipher
+import RSA_Cipher
 import sys
 import os
 
@@ -12,8 +14,11 @@ def switch(cipher, text, key, choice):
             if(key != ""):
                 text = cipher.decrypt(text, key)
             else:
-                return "To be implented"
+                text = removeSpace(upperCase(text))
+                text = cipher.no_key(text)
         return text
+    elif cipher == 'RSA':
+        cipher = RSA_Cipher
 
 # Function to remove all spaces contains in the text
 def removeSpace(text):
