@@ -1,23 +1,27 @@
 import string
 import Frequency
 
+frequency = Frequency
 english = "abcdefghijklmnopqrstuvwxyz"
 
-def generateKey(self, key):
+def subString(string, seperation):
+    return [string[i::seperation] for i in range(seperation)]
+
+def generateKey(key):
     # Store the index of the character
     index = []
     for i in key:
         index.append(english.find(i))
     return index
 
-def encrypt(self, message, key):
+def encrypt(message, key):
     encrypted_message = ""
-    key = self.generateKey(key)
+    key = generateKey(key)
     counter = 0
     for i in message:
         if counter == len(key):
             counter = 0
-        if i == " ":
+        if i == ' ':
             encrypted_message += i
         else:
             mPos = (english.find(i) + key[counter]) % 26
@@ -26,14 +30,14 @@ def encrypt(self, message, key):
     
     return ''.join(encrypted_message)
 
-def decrypt(self, message, key):
+def decrypt(message, key):
     decrypted_message = ""
-    key = self.generateKey(key)
+    key = generateKey(key)
     counter = 0
     for i in message:
         if counter == len(key):
             counter = 0
-        if i == " ":
+        if i == ' ':
             decrypted_message += i
         else:
             mPos = (english.find(i) - key[counter]) % 26

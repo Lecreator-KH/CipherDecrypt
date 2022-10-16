@@ -15,4 +15,3 @@ def letterCounter(message):
             letter_count += 1
 
     return letter_counter
-

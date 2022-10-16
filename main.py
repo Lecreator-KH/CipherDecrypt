@@ -5,11 +5,14 @@ import os
 
 def switch(cipher, text, key, choice):
     if cipher == 'Vignere':
-        cipher = Vignere_Cipher()
+        cipher = Vignere_Cipher
         if choice == 'E':
             text = cipher.encrypt(text, key)
         elif choice == 'D':
-            text = cipher.decrypt(text, key)
+            if(key != ""):
+                text = cipher.decrypt(text, key)
+            else:
+                return "To be implented"
         return text
 
 # Function to remove all spaces contains in the text
@@ -35,9 +38,6 @@ def main():
 
     output_text = upperCase(switch(cipher, lowerCase(input_text), lowerCase(key), choice))
     print(output_text)
-    #Test
-    temp_text = upperCase(switch(cipher, lowerCase(output_text), lowerCase(key), 'D'))
-    print(temp_text)
 
 if __name__ == '__main__':
     main()
