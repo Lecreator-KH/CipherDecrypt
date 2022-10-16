@@ -1,13 +1,10 @@
-from operator import le
 import string
 
 # From http://mathcenter.oxford.emory.edu/site/math125/englishLetterFreqs/
-# 
-englishFrequency = {'E': 12.702, 'T': 9.056, 'A': 8.167, 'O': 7.507, 'I': 6.966, 'N': 6.749, 'S': 6.327, 'H': 6.094, 'R': 5.987, 'D': 4.253, 'L': 4.025, 'C': 2.782, 'U': 2.758, 'M': 2.406, 'W': 2.360, 'F': 2.228, 'G': 2.015, 'Y': 1.974, 'P': 1.929, 'B': 1.492, 'V': 0.978, 'K': 0.772, 'J': 0.153, 'X': 0.150, 'Q': 0.095, 'Z': 0.074}
+# List sorted from A - Z, So The first item is in the list is A
+englishFrequency = [0.08167, 0.01492, 0.02782, 0.04253, 0.12702, 0.02228, 0.02015, 0.06094, 0.06966, 0.00153, 0.00772, 0.04025, 0.02406, 0.06749, 0.07507, 0.01929, 0.00095, 0.05987, 0.06327, 0.09056, 0.02758, 0.00978, 0.02360, 0.00150, 0.01974, 0.00074]
 english = "abcdefghijklmnopqrstuvwxyz"
-etoin = "etaoinshrdlcumwfgypbvkjxqz"
 
-# 
 def letterCounter(message):
     letter_counter = dict.fromkeys(string.ascii_lowercase, 0)
     letter_count = 0
